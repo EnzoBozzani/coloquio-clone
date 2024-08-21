@@ -1,0 +1,35 @@
+@use '@carbon/colors';
+
+.pageContent {
+	margin-top: 5rem;
+
+	.arrowRow {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 3rem 0;
+
+		svg {
+			width: 2rem;
+			height: 2rem;
+			color: colors.$purple-60;
+			flex-shrink: 0;
+			cursor: pointer;
+
+			animation: pulse 1s linear infinite alternate-reverse;
+		}
+	}
+}
+
+@keyframes pulse {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 0;
+	}
+}

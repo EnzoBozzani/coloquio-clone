@@ -1,0 +1,71 @@
+@use '@carbon/colors';
+
+.modal > div[role='dialog'] {
+	max-width: 1312px;
+}
+
+.modalContent {
+	display: grid;
+	width: 100%;
+
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+
+	.imageSide,
+	.textSide {
+		width: 100%;
+	}
+
+	img {
+		width: 100%;
+		overflow: clip;
+		aspect-ratio: 1/1;
+	}
+
+	@media (max-width: 671px) {
+		display: grid;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		font-size: 12px;
+	}
+}
+
+.textSide {
+	margin-bottom: 1.5rem;
+	padding-right: 1.5rem;
+	padding-left: 1.5rem;
+	overflow-y: scroll;
+	max-height: 700px;
+
+	.header {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		padding-top: 1.5rem;
+	}
+
+	.title {
+		display: flex;
+		align-items: center;
+		column-gap: 0.5rem;
+	}
+
+	svg {
+		height: 2rem;
+		width: 2rem;
+
+		cursor: pointer;
+	}
+
+	h4 {
+		color: colors.$gray-60;
+		font-size: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
+
+	p {
+		text-align: justify;
+	}
+
+	@media (max-width: 671px) {
+		padding-bottom: 3rem;
+	}
+}
