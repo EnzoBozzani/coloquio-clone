@@ -1,4 +1,4 @@
-@use '@carbon/colors';
+@use '@carbon/colors' as *;
 
 .modal > div[role='dialog'] {
 	max-width: 1312px;
@@ -56,7 +56,7 @@
 	}
 
 	h4 {
-		color: colors.$gray-60;
+		color: $gray-60;
 		font-size: 1.5rem;
 		padding-bottom: 1.5rem;
 	}

@@ -1,10 +1,23 @@
 @use '@carbon/react';
-@use '@carbon/colors';
+@use '@carbon/colors' as *;
+@use '@carbon/layout' as *;
 @use '@carbon/themes/scss/themes';
 @use '@carbon/themes/scss/theme';
+@use '@carbon/type' as *;
 
 .dark-theme {
 	@include theme.theme(themes.$g100);
+}
+
+@font-face {
+	font-family: 'IBM Slash';
+	src: url('/fonts/IBM-Slash.ttf') format('truetype');
+}
+
+@keyframes blinker {
+	50% {
+		opacity: 0;
+	}
 }
 
 html {
@@ -19,7 +32,7 @@ html {
 }
 
 .highlight {
-	color: colors.$purple-50;
+	color: $purple-50;
 }
 
 *,
