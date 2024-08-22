@@ -1,10 +1,10 @@
-type Admin = {
+export type Admin = {
 	id: number;
 	email: string;
 	hashed_password: string;
 };
 
-type Speaker = {
+export type Speaker = {
 	id: number;
 	name: string;
 	company: string;
@@ -13,14 +13,14 @@ type Speaker = {
 	bio: string;
 };
 
-type TimeWindow = {
+export type TimeWindow = {
 	id: number;
 	title: string;
 	start: string;
 	end: string;
 };
 
-type Lecture = {
+export type Lecture = {
 	id: number;
 	title: string;
 	speaker_id: number;

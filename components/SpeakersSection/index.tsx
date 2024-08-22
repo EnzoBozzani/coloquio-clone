@@ -1,3 +1,5 @@
+import { Speaker } from '@/types';
+
 import styles from './styles.module.scss';
 import { SpeakerCard } from '../SpeakerCard';
 

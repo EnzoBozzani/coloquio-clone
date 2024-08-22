@@ -1,3 +1,5 @@
+import { Speaker } from '@/types';
+
 export class SpeakerService {
 	static async getAll() {
 		const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/speaker`, {
