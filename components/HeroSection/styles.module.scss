@@ -1,5 +1,9 @@
+@use '@carbon/layout';
+@use '@carbon/colors';
+
 .section {
 	width: 100%;
+	padding-top: 2rem;
 }
 
 .titleSide {
@@ -7,7 +11,88 @@
 	place-items: center;
 }
 
+.ibmTitle {
+	font-size: clamp(1.3rem, 4vw, 2rem);
+	padding-top: 0.6rem;
+	padding-bottom: clamp(layout.$spacing-06, 4vw, layout.$spacing-08);
+
+	strong {
+		padding: 0 4px;
+	}
+}
+
+.mainTitle {
+	font-size: clamp(2rem, 6vw, 5rem);
+}
+
+.secondaryTitle {
+	font-size: 2rem;
+	padding-bottom: layout.$spacing-11;
+
+	span {
+		color: colors.$purple-60;
+	}
+}
+
+.info {
+	padding-top: layout.$spacing-09;
+	border-top: layout.$spacing-01 solid #e0e0e0;
+	height: 100%;
+	gap: layout.$spacing-07;
+
+	display: grid;
+
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+
+	@media (max-width: 1312px) {
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+	}
+}
+
+.iconRow {
+	padding-bottom: layout.$spacing-05;
+
+	display: flex;
+	align-items: center;
+
+	column-gap: layout.$spacing-03;
+
+	svg {
+		width: layout.$spacing-07;
+		height: layout.$spacing-07;
+		color: colors.$purple-60;
+	}
+}
+
+.subscribeBtnDiv {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+
+	@media (max-width: 1312px) {
+		display: block;
+	}
+
+	button {
+		background-color: colors.$purple-60;
+
+		a,
+		span {
+			text-decoration: none;
+		}
+	}
+}
+
 .imgSide {
+	@media (min-width: 672px) {
+		display: grid;
+		place-items: center;
+	}
+
+	div,
 	img {
 		width: 100%;
 		height: auto;
