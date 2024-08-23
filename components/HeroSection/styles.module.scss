@@ -1,9 +1,9 @@
 @use '@carbon/layout';
 @use '@carbon/colors';
+@use '@carbon/grid';
 
 .section {
 	width: 100%;
-	padding-top: 2rem;
 }
 
 .titleSide {
@@ -11,26 +11,32 @@
 	place-items: center;
 }
 
+.titleSideGrid {
+	@include grid.breakpoint-down('md') {
+		width: 100%;
+	}
+}
+
 .ibmTitle {
 	font-size: clamp(1.3rem, 4vw, 2rem);
 	padding-top: 0.6rem;
 	padding-bottom: clamp(layout.$spacing-06, 4vw, layout.$spacing-08);
-
-	strong {
-		padding: 0 4px;
-	}
 }
 
 .mainTitle {
-	font-size: clamp(2rem, 6vw, 5rem);
+	font-size: clamp(3rem, 6vw, 5rem);
 }
 
 .secondaryTitle {
-	font-size: 2rem;
+	font-size: clamp(1rem, 4vw, 2rem);
 	padding-bottom: layout.$spacing-11;
 
 	span {
 		color: colors.$purple-60;
+	}
+
+	@include grid.breakpoint-down('lg') {
+		padding-bottom: layout.$spacing-07;
 	}
 }
 
@@ -38,13 +44,13 @@
 	padding-top: layout.$spacing-09;
 	border-top: layout.$spacing-01 solid #e0e0e0;
 	height: 100%;
-	gap: layout.$spacing-07;
+	gap: layout.$spacing-03;
 
 	display: grid;
 
 	grid-template-columns: repeat(2, minmax(0, 1fr));
 
-	@media (max-width: 1312px) {
+	@include grid.breakpoint-down('xlg') {
 		grid-template-columns: repeat(1, minmax(0, 1fr));
 	}
 }
@@ -82,6 +88,11 @@
 		a,
 		span {
 			text-decoration: none;
+			color: #fff;
+		}
+
+		@include grid.breakpoint-down('md') {
+			width: 80%;
 		}
 	}
 }

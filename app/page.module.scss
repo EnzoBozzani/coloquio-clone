@@ -1,4 +1,5 @@
 @use '@carbon/colors';
+@use '@carbon/grid';
 
 .main {
 	display: flex;
@@ -13,7 +14,6 @@
 	padding: 0;
 	display: flex;
 	flex-direction: column;
-	gap: 4rem;
 	width: 100vw;
 
 	.arrowRow {
@@ -21,7 +21,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding: 3rem 0;
+		padding-bottom: 3rem;
 
 		svg {
 			width: 2rem;
@@ -31,6 +31,10 @@
 			cursor: pointer;
 
 			animation: pulse 1s linear infinite alternate-reverse;
+		}
+
+		@include grid.breakpoint-down('md') {
+			padding-top: 1rem;
 		}
 	}
 }

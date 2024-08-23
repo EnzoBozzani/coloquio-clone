@@ -12,16 +12,20 @@ export const HeroSection = () => {
 	return (
 		<section className={cn('cds--grid', styles.section)}>
 			<div className='cds--row'>
-				<div className={cn('cds--col-sm-4 cds--col-md-4 cds--col-lg-8', styles.titleSide)}>
-					<div className='cds--grid'>
+				<div className={cn('cds--col', styles.titleSide)}>
+					<div className={cn('cds--grid', styles.titleSideGrid)}>
 						<h3 className={cn('cds--row', styles.ibmTitle)}>
-							IBM <strong>Research</strong> Brasil
+							IBM&nbsp;
+							<strong>Research</strong>
+							&nbsp;Brasil
 						</h3>
 						<h1 className={cn('cds--row', styles.mainTitle)}>
-							Colóquio <strong>2023</strong>
+							Colóquio&nbsp;
+							<strong>2023</strong>
 						</h1>
 						<h3 className={cn('cds--row', styles.secondaryTitle)}>
-							Tecnologias <span>responsáveis e inclusivas</span>
+							Tecnologias&nbsp;
+							<span>responsáveis e inclusivas</span>
 						</h3>
 						<div className={cn(styles.info)}>
 							<div>
@@ -48,7 +52,7 @@ export const HeroSection = () => {
 						</div>
 					</div>
 				</div>
-				<div className={cn('cds--col-sm-0 cds--col-md-4 cds--col-lg-8', styles.imgSide)}>
+				<div className={cn('cds--col-sm-0 cds--col', styles.imgSide)}>
 					<div>
 						<Image
 							alt='hero section'
