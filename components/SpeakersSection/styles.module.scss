@@ -1,5 +1,6 @@
 @use '@carbon/colors';
 @use '@carbon/layout';
+@use '@carbon/grid';
 
 .sectionBg {
 	background-color: colors.$black-100;
@@ -9,6 +10,26 @@
 
 .section {
 	padding: layout.$spacing-10 0;
+
+	@include grid.breakpoint-down('md') {
+		padding: layout.$spacing-09;
+	}
+
+	::-webkit-scrollbar {
+		-webkit-appearance: none;
+		height: layout.$spacing-02;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: white;
+	}
+
+	::-webkit-scrollbar-track {
+		margin: 0 25vw;
+		background-color: rgba(255, 255, 255, 0.5);
+		background-clip: content-box;
+		border: 1px transparent solid;
+	}
 }
 
 .titleSide {
@@ -40,7 +61,7 @@
 	flex-flow: row wrap;
 	gap: 0.125rem;
 
-	@media (max-width: 671px) {
+	@include grid.breakpoint-down('md') {
 		overflow-x: scroll;
 		display: grid;
 		grid-gap: 0.125rem;
@@ -49,12 +70,5 @@
 		grid-auto-flow: column;
 		grid-auto-columns: minmax(180px, auto);
 		padding-bottom: 1.5rem;
-
-		&::-webkit-scrollbar-track {
-			margin: 0 25vw;
-			background-color: rgba(255, 255, 255, 0.5);
-			background-clip: content-box;
-			border: 1px solid transparent;
-		}
 	}
 }
