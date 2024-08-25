@@ -36,8 +36,13 @@
 	width: 100%;
 	position: relative;
 	margin-top: 3rem;
+}
 
-	.blue-slash::before {
+.title {
+	font-size: 2rem;
+	margin-bottom: 2rem;
+
+	&::before {
 		font-family: 'IBM Slash';
 		color: colors.$purple-60;
 		content: 'w';
@@ -45,11 +50,6 @@
 		left: -20px;
 		top: -50px;
 		font-size: 2.5rem;
-	}
-
-	h3 {
-		font-size: 2rem;
-		margin-bottom: 2rem;
 	}
 }
 

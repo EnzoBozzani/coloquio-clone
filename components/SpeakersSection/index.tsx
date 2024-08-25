@@ -18,7 +18,7 @@ export const SpeakersSection = ({ speakers }: { speakers: Speaker[] }) => {
 							'cds--offset-md-1 cds--offset-lg-1 cds--col-md-6 cds--col-lg-5 cds--col-sm-4'
 						)}
 					>
-						<h3 className='blue-slash'>Palestrantes</h3>
+						<h3 className={styles.title}>Palestrantes</h3>
 						<p>Conheça mais sobre cada palestrante que estará conosco neste Colóquio.</p>
 					</div>
 					<div

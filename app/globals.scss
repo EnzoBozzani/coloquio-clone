@@ -5,6 +5,8 @@
 @use '@carbon/themes';
 @use '@carbon/type';
 
+@import '../components/SpeakerModal/styles.module.scss';
+
 @include grid.flex-grid();
 
 @font-face {
