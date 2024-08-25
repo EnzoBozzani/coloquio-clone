@@ -94,6 +94,10 @@
 		@include grid.breakpoint-down('md') {
 			width: 80%;
 		}
+
+		&:hover {
+			background-color: colors.$purple-70;
+		}
 	}
 }
 

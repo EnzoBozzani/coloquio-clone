@@ -1,29 +1,30 @@
-.speakersSectionBg {
-	background-color: #000;
+@use '@carbon/colors';
+@use '@carbon/layout';
+
+.sectionBg {
+	background-color: colors.$black-100;
 	width: 100%;
 	color: #fff;
 }
 
-.speakersSection {
-	max-width: 99rem;
-	margin: 0 auto;
-	padding: 4rem;
-	display: grid;
-	grid-template-columns: 1fr;
-
-	@media (min-width: 1056px) {
-		grid-template-columns: 2fr 4fr;
-	}
-
-	@media (max-width: 671px) {
-		padding-right: 0;
-		padding-left: 0;
-	}
+.section {
+	padding: layout.$spacing-10 0;
 }
 
 .titleSide {
-	padding: 1rem;
 	width: 100%;
+	position: relative;
+	margin-top: 3rem;
+
+	.blue-slash::before {
+		font-family: 'IBM Slash';
+		color: colors.$purple-60;
+		content: 'w';
+		position: absolute;
+		left: -20px;
+		top: -50px;
+		font-size: 2.5rem;
+	}
 
 	h3 {
 		font-size: 2rem;
