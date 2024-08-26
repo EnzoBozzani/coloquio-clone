@@ -6,6 +6,7 @@ export type Image = {
 };
 
 export type Speaker = {
+	id: string;
 	name: string;
 	company: string;
 	linkedin: string;
@@ -14,6 +15,7 @@ export type Speaker = {
 };
 
 export type TimeWindow = {
+	id: string;
 	title: string;
 	start: string;
 	end: string;
@@ -21,6 +23,7 @@ export type TimeWindow = {
 };
 
 export type Lecture = {
+	id: string;
 	title: string;
 	speaker: string[];
 	timeWindow: string[];
