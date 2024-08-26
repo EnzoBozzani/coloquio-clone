@@ -2,7 +2,7 @@ import { Speaker } from '@/types';
 
 export class SpeakerService {
 	static async getAll() {
-		const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/speaker`, {
+		const res = await fetch(`/api/speakers`, {
 			method: 'GET',
 			headers: {
 				Accept: 'application/json',
@@ -11,6 +11,6 @@ export class SpeakerService {
 
 		if (!res.ok) return [];
 
-		return res.json() as Promise<Speaker[]>;
+		return res.json();
 	}
 }
