@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 import { AirtableHelper } from '../_helpers/airtable';
 
 export async function GET() {
-	const res = await AirtableHelper.get('/Lectures');
+	const res = await AirtableHelper.get('/lectures');
 
 	if (res.error) return NextResponse.json({ error: 'Algo deu errado!' }, { status: 400 });
 

@@ -8,26 +8,33 @@ import { MainHeader } from '@/components/MainHeader';
 import { HeroSection } from '@/components/HeroSection';
 import { SpeakersSection } from '@/components/SpeakersSection';
 import { SpeakerModal } from '@/components/SpeakerModal';
-import { speakers } from '@/constants/speakers';
-import { Speaker } from '@/types';
-import { SpeakerService } from '@/services/SpeakerService';
+import { FormattedWindow, Speaker } from '@/types';
+import { getAllData } from '@/utils';
+import { useLoading } from '@/hooks/use-loading';
+import { Loader } from '@/components/Loader';
 
 import styles from './page.module.scss';
 
 const HomePage = () => {
-	const [pending, startTransition] = useTransition();
-	// const [speakers, setSpeakers] = useState<Speaker[]>([]);
+	const [speakers, setSpeakers] = useState<Speaker[]>([]);
+	const [windows, setWindows] = useState<FormattedWindow[]>([]);
+
+	const { loading, setLoading } = useLoading();
 
 	useEffect(() => {
-		startTransition(async () => {
-			const data = await SpeakerService.getAll();
+		const fetchData = async () => {
+			setLoading(true);
+			const data = await getAllData();
 
-			console.log(data);
-		});
-	}, []);
+			setSpeakers(data.speakers);
+			setLoading(false);
+		};
+		fetchData();
+	}, [setLoading]);
 
 	return (
 		<Theme theme='white'>
+			<Loader />
 			<main className={styles.main}>
 				<MainHeader />
 				<Content className={styles.content}>

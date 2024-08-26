@@ -11,17 +11,25 @@ export type Speaker = {
 	linkedin: string;
 	image: Image[];
 	bio: string;
-	lecture: string;
 };
 
 export type TimeWindow = {
 	title: string;
 	start: string;
 	end: string;
+	lectures: string[];
 };
 
 export type Lecture = {
 	title: string;
-	speaker_id: number;
-	window_id: number;
+	speaker: string[];
+	timeWindow: string[];
+};
+
+export type FormattedWindow = {
+	title: string;
+	start: string;
+	end: string;
+	speaker: Speaker | null;
+	lectures: { title: string; speakerName: string }[];
 };

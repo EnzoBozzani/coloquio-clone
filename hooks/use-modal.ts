@@ -1,5 +1,7 @@
 import { create } from 'zustand';
 
+import { Speaker } from '@/types';
+
 type ModalStore = {
 	isOpen: boolean;
 	onOpen: (speaker: Speaker) => void;

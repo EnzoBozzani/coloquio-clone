@@ -26,7 +26,7 @@ export const SpeakerModal = () => {
 				<div className='cds--row'>
 					<div className={cn(styles.imageSide, 'cds--col')}>
 						<Image
-							src={`${speaker.image}`}
+							src={`${speaker.image[0].url}`}
 							alt={`Convidado ${speaker.name}`}
 							height={400}
 							width={300}
