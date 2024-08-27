@@ -1,9 +1,30 @@
 @use '@carbon/colors';
 @use '@carbon/layout';
+@use '@carbon/grid';
 
 .cds--modal-container {
 	max-width: 1312px;
 	overflow: hidden;
+
+	.cds--row {
+		margin: 0;
+		padding: 0;
+	}
+
+	::-webkit-scrollbar {
+		-webkit-appearance: none;
+		width: layout.$spacing-04;
+	}
+
+	::-webkit-scrollbar-track {
+		background-color: rgba(0, 0, 0, 0.1);
+	}
+
+	::-webkit-scrollbar-thumb {
+		// border-radius: 4px;
+		background-color: rgba(0, 0, 0, 0.8);
+		box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+	}
 }
 
 .modalContent {
@@ -18,22 +39,29 @@
 }
 
 .imageSide {
-	display: grid;
-	place-items: center;
-	overflow: clip;
+	@include grid.breakpoint-up('md') {
+		position: relative;
+		object-fit: contain;
+		overflow-x: hidden;
+		padding: 0;
 
-	img {
-		height: 100%;
-		width: auto;
+		img {
+			width: 50%;
+			height: auto;
+		}
 	}
 }
 
 .textSide {
-	padding-bottom: layout.$spacing-10;
-	padding-right: layout.$spacing-10;
-	padding-left: layout.$spacing-07;
-	overflow-y: scroll;
-	max-height: 700px;
+	@include grid.breakpoint-up('md') {
+		overflow-y: auto;
+		width: inherit;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 50%;
+		padding: layout.$spacing-06;
+	}
 
 	.header {
 		display: flex;

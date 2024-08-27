@@ -1,8 +1,16 @@
-export type Image = {
-	id: string;
+type ImageBase = {
 	width: number;
 	height: number;
 	url: string;
+};
+
+export type Image = ImageBase & {
+	id: string;
+	thumbnails: {
+		full: ImageBase;
+		large: ImageBase;
+		small: ImageBase;
+	};
 };
 
 export type Speaker = {
