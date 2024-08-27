@@ -4,4 +4,37 @@
 
 .section {
 	width: 100%;
+	padding: layout.$spacing-10 0;
+
+	@include grid.breakpoint-down('md') {
+		padding: layout.$spacing-09;
+	}
+}
+
+.titleSide {
+	width: 100%;
+	position: relative;
+	margin-top: 3rem;
+}
+
+.title {
+	font-size: 2rem;
+
+	&::before {
+		font-family: 'IBM Slash';
+		color: colors.$purple-60;
+		content: 'w';
+		position: absolute;
+		left: -20px;
+		top: -50px;
+		font-size: 2.5rem;
+	}
+}
+
+.speakersSide {
+	padding: 1rem;
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
 }
