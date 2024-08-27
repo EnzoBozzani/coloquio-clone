@@ -1,4 +1,4 @@
-import { Lecture, Image, Speaker, TimeWindow } from '@/types';
+import { Lecture, Speaker, FormattedWindow, TimeWindow } from '@/types';
 
 export const cn = (...classes: string[]) => {
 	return classes.join(' ');
@@ -29,7 +29,35 @@ export const formatData = ({
 	lectures,
 	speakers,
 }: {
-	windows: Window[];
+	windows: TimeWindow[];
 	lectures: Lecture[];
 	speakers: Speaker[];
-}) => {};
+}) => {
+	const formattedWindows: FormattedWindow[] = windows.map((w) => ({
+		title: w.title,
+		startTime: w.startTime,
+		speakerName: w.speaker ? speakers.find((speaker) => speaker.id === w.speaker[0])?.name || null : null,
+		lectures: w.lectures
+			? w.lectures
+					.map((lectureId) => {
+						const foundLecture = lectures.find((l) => l.id === lectureId);
+						if (foundLecture) {
+							return {
+								title: foundLecture.title,
+								speakerName: foundLecture.speakerName[0],
+							};
+						}
+
+						return null;
+					})
+					.filter((l) => l !== null)
+			: null,
+	}));
+
+	return formattedWindows.sort((windowA, windowB) => {
+		const startA = Number(windowA.startTime.split(':')[0]) + Number(windowA.startTime.split(':')[1]) / 60;
+		const startB = Number(windowB.startTime.split(':')[0]) + Number(windowB.startTime.split(':')[1]) / 60;
+
+		return startA - startB;
+	});
+};

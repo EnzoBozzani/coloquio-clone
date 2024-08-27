@@ -10,8 +10,6 @@ import styles from './styles.module.scss';
 export const SpeakerCard = ({ speaker }: { speaker: Speaker }) => {
 	const { onOpen } = useModal();
 
-	console.log(speaker);
-
 	return (
 		<div
 			className={styles.speakerCard}
@@ -19,11 +17,6 @@ export const SpeakerCard = ({ speaker }: { speaker: Speaker }) => {
 			onClick={() => {
 				onOpen(speaker);
 			}}
-			// style={{
-			// 	backgroundImage: `linear-gradient(180deg, transparent 60%, #000), url(${speaker.image[0].url})`,
-			// 	backgroundSize: `cover`,
-			// 	backgroundPosition: 'center',
-			// }}
 		>
 			<Image
 				alt={speaker.name}
