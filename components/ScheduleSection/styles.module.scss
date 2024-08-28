@@ -31,10 +31,16 @@
 	}
 }
 
-.speakersSide {
+.windowsSide {
 	padding: 1rem;
 	width: 100%;
+}
 
-	display: flex;
-	flex-direction: column;
+.windows {
+	width: 100%;
+	padding: layout.$spacing-06;
+
+	@include grid.breakpoint-down('md') {
+		padding: layout.$spacing-06 0;
+	}
 }

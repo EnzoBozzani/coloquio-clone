@@ -4,6 +4,7 @@ import { FormattedWindow } from '@/types';
 import { cn } from '@/utils';
 
 import styles from './styles.module.scss';
+import { WindowRow } from '../WindowRow';
 
 export interface ScheduleSectionProps {
 	windows: FormattedWindow[];
@@ -31,11 +32,15 @@ export const ScheduleSection = ({ windows }: ScheduleSectionProps) => {
 							'cds--offset-md-1 cds--offset-lg-0 cds--col-lg-9 cds--col-sm-4 cds--col-md-6'
 						)}
 					>
-						{windows.map((window) => (
-							<div key={window.title}>
-								{window.startTime} + {window.title}
-							</div>
-						))}
+						<div className={cn(styles.windows, 'cds--grid')}>
+							{windows.map((window, i) => (
+								<WindowRow
+									key={window.title}
+									window={window}
+									index={i}
+								/>
+							))}
+						</div>
 					</div>
 				</div>
 			</section>

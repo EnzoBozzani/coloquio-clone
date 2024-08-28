@@ -1,0 +1,38 @@
+@use '@carbon/colors';
+@use '@carbon/layout';
+@use '@carbon/grid';
+
+.row {
+	display: flex;
+	align-items: flex-start;
+	width: 100%;
+	padding: layout.$spacing-06 0;
+}
+
+.time {
+	font-size: clamp(1rem, 5vw, 1.5rem);
+	width: 20%;
+	font-weight: 700;
+}
+
+.info {
+	width: 80%;
+
+	p {
+		font-size: clamp(1.1rem, 5vw, 1.25rem);
+	}
+
+	li {
+		font-size: clamp(0.75rem, 5vw, 1rem);
+		padding: layout.$spacing-04 0;
+
+		display: list-item;
+		list-style-type: disc;
+
+		div {
+			display: flex;
+			flex-direction: column;
+			row-gap: layout.$spacing-03;
+		}
+	}
+}
