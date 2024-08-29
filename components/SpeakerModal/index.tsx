@@ -8,11 +8,16 @@ import { useModal } from '@/hooks/use-modal';
 import { cn } from '@/utils';
 
 import styles from './styles.module.scss';
+import { useScreenSize } from '@/hooks/use-screen-size';
 
 export const SpeakerModal = () => {
 	const { isOpen, onClose, speaker } = useModal();
 
+	const screenSize = useScreenSize();
+
 	if (!speaker) return null;
+
+	const higherThanSm = screenSize !== 'sm';
 
 	return (
 		<Modal
@@ -22,9 +27,9 @@ export const SpeakerModal = () => {
 			isFullWidth
 			size='lg'
 		>
-			<div className={cn(styles.modalContent, 'cds--grid')}>
-				<div className='cds--row'>
-					<div className={cn(styles.imageSide, 'cds--col')}>
+			<div className={cn(styles.modalContent, higherThanSm && 'cds--grid')}>
+				<div className={cn(higherThanSm && 'cds--row')}>
+					<div className={cn(styles.imageSide, higherThanSm && 'cds--col')}>
 						<Image
 							src={`${speaker.image[0].url}`}
 							alt={`Convidado ${speaker.name}`}
@@ -32,7 +37,7 @@ export const SpeakerModal = () => {
 							height={300}
 						/>
 					</div>
-					<div className={cn(styles.textSide, 'cds--col')}>
+					<div className={cn(styles.textSide, higherThanSm && 'cds--col')}>
 						<span className={styles.header}>
 							<Close onClick={() => onClose()} />
 						</span>

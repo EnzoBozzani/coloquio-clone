@@ -1,6 +1,6 @@
 import { Lecture, Speaker, FormattedWindow, TimeWindow } from '@/types';
 
-export const cn = (...classes: string[]) => {
+export const cn = (...classes: (string | null | undefined | boolean)[]) => {
 	return classes.join(' ');
 };
 

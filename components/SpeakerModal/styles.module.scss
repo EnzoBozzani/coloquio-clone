@@ -21,7 +21,6 @@
 	}
 
 	::-webkit-scrollbar-thumb {
-		// border-radius: 4px;
 		background-color: rgba(0, 0, 0, 0.8);
 		box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 	}
@@ -32,7 +31,7 @@
 	margin: 0 !important;
 	padding: 0 !important;
 
-	@media (max-width: 671px) {
+	@include grid.breakpoint-down('md') {
 		display: grid;
 		font-size: 12px;
 	}
@@ -42,11 +41,20 @@
 	@include grid.breakpoint-up('md') {
 		position: relative;
 		object-fit: contain;
-		overflow-x: hidden;
+		overflow: hidden;
 		padding: 0;
 
 		img {
 			width: 50%;
+			height: 100%;
+		}
+	}
+
+	@include grid.breakpoint-down('md') {
+		width: 100%;
+
+		img {
+			width: 100%;
 			height: auto;
 		}
 	}
@@ -61,6 +69,12 @@
 		bottom: 0;
 		left: 50%;
 		padding: layout.$spacing-06;
+	}
+
+	@include grid.breakpoint-down('md') {
+		width: 100%;
+		padding: 0 layout.$spacing-04;
+		padding-bottom: layout.$spacing-12;
 	}
 
 	.header {
@@ -91,9 +105,5 @@
 
 	p {
 		text-align: justify;
-	}
-
-	@media (max-width: 671px) {
-		padding-bottom: 3rem;
 	}
 }
