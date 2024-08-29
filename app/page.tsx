@@ -2,7 +2,7 @@
 
 import { Theme, Content } from '@carbon/react';
 import { ArrowDown } from '@carbon/icons-react';
-import { useEffect, useState, useTransition } from 'react';
+import { useEffect, useState } from 'react';
 
 import { MainHeader } from '@/components/MainHeader';
 import { HeroSection } from '@/components/HeroSection';
@@ -12,15 +12,16 @@ import { FormattedWindow, Speaker } from '@/types';
 import { formatData, getAllData } from '@/utils';
 import { useLoading } from '@/hooks/use-loading';
 import { Loader } from '@/components/Loader';
+import { ScheduleSection } from '@/components/ScheduleSection';
+import { VideoSection } from '@/components/VideoSection';
 
 import styles from './page.module.scss';
-import { ScheduleSection } from '@/components/ScheduleSection';
 
 const HomePage = () => {
 	const [speakers, setSpeakers] = useState<Speaker[]>([]);
 	const [windows, setWindows] = useState<FormattedWindow[]>([]);
 
-	const { loading, setLoading } = useLoading();
+	const { setLoading } = useLoading();
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -48,6 +49,7 @@ const HomePage = () => {
 					</div>
 					<SpeakersSection speakers={speakers} />
 					<ScheduleSection windows={windows} />
+					<VideoSection />
 				</Content>
 				<SpeakerModal />
 			</main>

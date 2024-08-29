@@ -1,0 +1,40 @@
+@use '@carbon/colors';
+@use '@carbon/layout';
+@use '@carbon/grid';
+
+.section {
+	width: 100%;
+
+	video {
+		position: absolute;
+		visibility: visible;
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+	}
+}
+
+.box {
+	background-color: colors.$white;
+	padding: layout.$spacing-12 clamp(layout.$spacing-06, 5vw, layout.$spacing-12);
+	margin-top: layout.$spacing-13;
+	margin-bottom: layout.$spacing-13;
+	visibility: visible;
+	display: flex;
+	flex-direction: column;
+	h1 {
+		font-weight: 600;
+		font-size: clamp(1.5rem, 5vw, 2.85rem);
+		font-style: italic;
+	}
+
+	h2 {
+		align-self: flex-start;
+		font-size: clamp(1.25rem, 3vw, 2rem);
+	}
+}
+
+.hidden {
+	position: relative;
+	visibility: hidden;
+}

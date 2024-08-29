@@ -7,7 +7,7 @@
 	padding: layout.$spacing-10 0;
 
 	@include grid.breakpoint-down('md') {
-		padding: layout.$spacing-09;
+		padding: layout.$spacing-06 layout.$spacing-10;
 	}
 }
 

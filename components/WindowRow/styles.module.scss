@@ -5,6 +5,7 @@
 .row {
 	display: flex;
 	align-items: flex-start;
+	column-gap: layout.$spacing-04;
 	width: 100%;
 	padding: layout.$spacing-06 0;
 }
@@ -17,6 +18,10 @@
 
 .info {
 	width: 80%;
+
+	.title {
+		margin-top: -5px;
+	}
 
 	p {
 		font-size: clamp(1.1rem, 5vw, 1.25rem);
