@@ -4,16 +4,17 @@ import { Theme, Content } from '@carbon/react';
 import { ArrowDown } from '@carbon/icons-react';
 import { useEffect, useState } from 'react';
 
+import { FormattedWindow, Speaker } from '@/types';
+import { formatData, getAllData } from '@/utils';
+import { useLoading } from '@/hooks/use-loading';
 import { MainHeader } from '@/components/MainHeader';
 import { HeroSection } from '@/components/HeroSection';
 import { SpeakersSection } from '@/components/SpeakersSection';
 import { SpeakerModal } from '@/components/SpeakerModal';
-import { FormattedWindow, Speaker } from '@/types';
-import { formatData, getAllData } from '@/utils';
-import { useLoading } from '@/hooks/use-loading';
 import { Loader } from '@/components/Loader';
 import { ScheduleSection } from '@/components/ScheduleSection';
 import { VideoSection } from '@/components/VideoSection';
+import { Footer } from '@/components/Footer';
 
 import styles from './page.module.scss';
 
@@ -50,6 +51,7 @@ const HomePage = () => {
 					<SpeakersSection speakers={speakers} />
 					<ScheduleSection windows={windows} />
 					<VideoSection />
+					<Footer />
 				</Content>
 				<SpeakerModal />
 			</main>

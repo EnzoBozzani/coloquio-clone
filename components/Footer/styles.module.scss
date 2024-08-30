@@ -1,0 +1,49 @@
+@use '@carbon/colors';
+@use '@carbon/layout';
+@use '@carbon/grid';
+
+.footer {
+	width: 100%;
+	// padding-top: layout.$spacing-10;
+}
+
+.titleRow {
+	padding-bottom: layout.$spacing-06;
+
+	em {
+		font-weight: 300;
+	}
+	span {
+		color: colors.$purple-60;
+	}
+}
+
+.btnRow {
+	div {
+		padding-bottom: layout.$spacing-06;
+		border-bottom: 1px solid #000;
+	}
+
+	button {
+		background-color: colors.$purple-60;
+
+		a,
+		span {
+			text-decoration: none;
+			color: #fff;
+		}
+
+		@include grid.breakpoint-down('md') {
+			width: 80%;
+		}
+
+		&:hover {
+			background-color: colors.$purple-70;
+		}
+	}
+}
+
+.ibmRow {
+	padding-top: layout.$spacing-06;
+	padding-bottom: layout.$spacing-06;
+}
