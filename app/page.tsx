@@ -15,12 +15,17 @@ import { Loader } from '@/components/Loader';
 import { ScheduleSection } from '@/components/ScheduleSection';
 import { VideoSection } from '@/components/VideoSection';
 import { Footer } from '@/components/Footer';
+import { useCurrentUser } from '@/hooks/use-current-user';
 
 import styles from './page.module.scss';
 
 const HomePage = () => {
 	const [speakers, setSpeakers] = useState<Speaker[]>([]);
 	const [windows, setWindows] = useState<FormattedWindow[]>([]);
+
+	const currentUser = useCurrentUser();
+
+	console.log(currentUser);
 
 	const { setLoading } = useLoading();
 
