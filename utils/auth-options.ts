@@ -35,14 +35,12 @@ export const authOptions: NextAuthOptions = {
 	],
 	session: {
 		strategy: 'jwt',
-		// How long (in seconds) until an idle session expires and is no longer valid.
 		maxAge: parseInt(process.env.NEXT_PUBLIC_SESSION_MAXAGE ?? '7200', 10),
 	},
 	callbacks: {
 		signIn: async ({ user }) => {
 			if (user.id) {
 				try {
-					// return await airtable.isUserAuthorized(user.id)
 					return true;
 				} catch (e) {
 					console.log(e);
@@ -68,15 +66,6 @@ export const authOptions: NextAuthOptions = {
 		jwt: async ({ token, user }) => {
 			user && (token.user = user);
 
-			if (token.sub) {
-				try {
-					// const response = await airtable.checkForPermissions(token.sub)
-					// token.deployPermission = response?.deployPermission
-					// token.devPermission = response?.devPermission
-				} catch (e) {
-					console.log(e);
-				}
-			}
 			return token;
 		},
 	},

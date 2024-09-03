@@ -4,6 +4,8 @@ import { MouseEventHandler } from 'react';
 import {
 	Header,
 	HeaderContainer,
+	HeaderGlobalAction,
+	HeaderGlobalBar,
 	HeaderMenuButton,
 	HeaderMenuItem,
 	HeaderName,
@@ -13,6 +15,10 @@ import {
 	SideNavItems,
 	Theme,
 } from '@carbon/react';
+import { signOut } from 'next-auth/react';
+import { Logout } from '@carbon/icons-react';
+
+import styles from './styles.module.scss';
 
 export const MainHeader = () => {
 	return (
@@ -51,6 +57,14 @@ export const MainHeader = () => {
 								Mais sobre nós
 							</HeaderMenuItem>
 						</HeaderNavigation>
+						<HeaderGlobalBar>
+							<HeaderGlobalAction
+								aria-label='Sign Out'
+								onClick={() => signOut()}
+							>
+								<Logout className={styles.signOut} />
+							</HeaderGlobalAction>
+						</HeaderGlobalBar>
 						<SideNav
 							aria-label='Side navigation'
 							expanded={isSideNavExpanded}
